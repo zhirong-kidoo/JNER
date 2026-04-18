@@ -1,4 +1,4 @@
-# JLiNER Label Verifier — Training Scripts
+# JNER — Training Scripts
 
 NER training pipeline for detecting **minor children**, **gender indications**, and **biomedical entities** in text. Two model backends are provided: [GLiNER](https://github.com/urchade/GLiNER) (transformer-based, retains zero-shot generalization) and [spaCy](https://spacy.io/) (lighter, faster, fixed-label only).
 
