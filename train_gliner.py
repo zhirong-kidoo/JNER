@@ -430,11 +430,11 @@ def _make_ner_callback(eval_data: List[Dict], labels: List[str], output_dir: Pat
 
 def parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser(description="Train GLiNER on biomedical + review NER data")
-    p.add_argument("--model", default="numind/NuNER_Zero-span",
+    p.add_argument("--model", default="EmergentMethods/gliner_medium_bio-v0.1",
                    help="HuggingFace model ID to fine-tune (default: numind/NuNER_Zero-span)")
-    p.add_argument("--epochs", type=int, default=5)
+    p.add_argument("--epochs", type=int, default=10)
     p.add_argument("--batch-size", type=int, default=8)
-    p.add_argument("--lr", type=float, default=1e-5)
+    p.add_argument("--lr", type=float, default=3e-5)
     p.add_argument("--output-dir", default="gliner_finetuned",
                    help="Directory to save the fine-tuned model")
     p.add_argument("--seed", type=int, default=42)
