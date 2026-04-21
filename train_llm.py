@@ -27,6 +27,7 @@ from pathlib import Path
 from typing import Dict, List, Optional, Set, Tuple
 
 import torch
+from tqdm import tqdm
 from datasets import Dataset
 from transformers import (
     AutoModelForCausalLM,
@@ -442,7 +443,7 @@ def compute_ner_metrics(
     fn_map = {lbl: 0 for lbl in ALL_LABELS}
     parse_errors = 0
 
-    for ex in samples:
+    for ex in tqdm(samples, desc="NER eval", leave=False):
         tokens = ex["tokenized_text"]
         text = " ".join(tokens)
         messages = [
